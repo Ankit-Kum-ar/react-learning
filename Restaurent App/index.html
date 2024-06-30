@@ -8,14 +8,16 @@
 </head>
 <body style="background-color: #313131; color: #fff;">
     <div class="root">
-        <h3>Ankit is here!</h3> <!-- The h3 tag will replace by the React createElements -->
+        <div class="container"> 
+            <h3>Ankit is here!</h3> <!-- The h3 tag will replace by the React createElements -->
+        </div>
     </div>
     <!-- Implementing the react script tags... -->
     <!-- Two CDN links are implement which are (react and reactDOM)-->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
 
     <!-- Now make a different JS file to write the React Code. The file name => App.js -->
-    <script src="./App.js"></script>
+    <script type="module" src="./src/App.js"></script>
 </body>
 </html> 

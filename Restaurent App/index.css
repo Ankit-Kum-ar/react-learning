@@ -1,0 +1,105 @@
+#heading{
+    color: #8989;
+}
+.Header {
+    display: flex;
+    border: 1px solid hsl(60, 100%, 50%);
+    height: 80px;
+}
+.Header .Logo {
+    border-radius: 50px;
+    margin-left: 15px;
+    height: 80px;
+    width: 140px;
+}
+.nav-items li {
+    display: inline-block;
+    padding-right: 12px;
+    margin-left: 15px;
+    margin-top: 8px;
+    font-size: 22px;
+}
+#Leftli {
+    margin-left: 650px;
+}
+
+.filter {
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.restaurent-card {
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 15px;
+    overflow: hidden;
+}
+.restaurent-card:hover {
+    border: 1px solid grey;
+    cursor: pointer;
+}
+.restaurent-card img {
+    height: 185px;
+    width: 210px;
+    padding: 1px;
+    display: flex;
+    overflow: hidden;
+    object-fit: cover;
+}
+.restaurent-details {
+    margin-left: 3px;
+}
+.restaurent-details h4 {
+    width: 230px;
+    word-wrap: break-word;
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer {
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: grey;
+    width: 210px;
+    height: 280px;
+}
+.login-btn {
+    /* margin-top: 10px; */
+    margin-left: 10px;
+    padding: 6px;
+    padding-left: 13px;
+    padding-right: 13px;
+    cursor: pointer;
+}
+
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: large;
+}
+.search {
+    margin-right: 15px;
+}
+.search .search-box {
+    width: 250px;
+    height: 23px;
+    border-radius: 2px;
+    border: 1px solid grey;
+}
+.search .search-btn {
+    width: 70px;
+    height: 26px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+.search .search-box:focus {
+    outline: none;
+}
+.filter-btn {
+    cursor: pointer;
+}
