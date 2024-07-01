@@ -58,7 +58,7 @@ const Body = () => {
                         // filter logic
                         const cardListFiltered = listCards.filter((res) => res.info.avgRating >= 4.4);
                         console.log(cardListFiltered);
-                        setListCards(cardListFiltered);
+                        setFilterCards(cardListFiltered);
                     }}
                 >
                     Top Rated Restaurent

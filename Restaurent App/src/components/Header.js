@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 // Create Header Component
 const Header = () => {
@@ -25,10 +26,18 @@ const Header = () => {
             <img className="Logo" src={LOGO_URL} />
             <div className="nav-items">
                 <ul>
-                    <li id="Leftli">Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
+                    <li id="Leftli">
+                         <Link to="/" className="link">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/about" className="link">About</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact" className="link">Contact</Link>
+                    </li>
+                    <li>
+                        <Link className="link">Cart</Link>
+                    </li>
                     <button className="login-btn" onClick={logValue}>{btnValue}</button>
                 </ul>
             </div>
