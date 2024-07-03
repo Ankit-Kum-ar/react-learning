@@ -36,6 +36,9 @@ const Header = () => {
                         <Link to="/contact" className="link">Contact</Link>
                     </li>
                     <li>
+                        <Link to="/grocery" className="link">Grocery</Link>
+                    </li>
+                    <li>
                         <Link className="link">Cart</Link>
                     </li>
                     <button className="login-btn" onClick={logValue}>{btnValue}</button>

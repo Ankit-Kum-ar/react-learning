@@ -26,7 +26,7 @@
     color: white;
 }
 #Leftli {
-    margin-left: 650px;
+    margin-left: 550px;
 }
 
 .filter {
@@ -126,5 +126,13 @@
 .menu-heading {
     margin-top: 50px;
     font-size: 20px;
-    
+}
+.user {
+    margin-left: 5px;
+    margin-top: 40px;
+    border: 1px solid white;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 20px;
+    padding-right: 60px;
 }

@@ -3,25 +3,27 @@ import { Shimmer } from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { MENU_URL } from "../utils/constants";
 import { Error } from "./Error";
+import useRestaurentMenu from "../utils/useRestaurentMenu";
 
 export const RestaurentMenu = () => {
 
-    const [resInfo, setResInfo] = useState(null);
-    const [menuItems, setMenuItems] = useState([]);
+    // const [resInfo, setResInfo] = useState(null);
+    // const [menuItems, setMenuItems] = useState([]);
     const {resId} = useParams();
+    const [resInfo, menuItems] = useRestaurentMenu(resId); // Work through Custom Hook.
     // console.log(params); // It return resId
-    useEffect(() => {
-        fetchData();
-    },[]);
+    // useEffect(() => {
+    //     fetchData();
+    // },[]);
 
-    const fetchData = async () => {
-        const response = await fetch(MENU_URL+resId);
-        const data = await response.json();
-        console.log(data);
-        setResInfo(data?.data?.cards[2]?.card?.card?.info); 
-        setMenuItems(data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card);   
-        console.log(data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card);
-    }
+    // const fetchData = async () => {
+    //     const response = await fetch(MENU_URL+resId);
+    //     const data = await response.json();
+    //     console.log(data);
+    //     setResInfo(data?.data?.cards[2]?.card?.card?.info); 
+    //     setMenuItems(data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card);   
+    //     console.log(data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card);
+    // }
 
     // For initial values of resInfo
     if(resInfo === null || menuItems.length === 0) return <Shimmer/>

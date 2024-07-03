@@ -1,6 +1,7 @@
 import RestaurentCard from "./RestaurentCard";
 import {useEffect, useState} from "react";
 import { Shimmer } from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // Create Body Component
 const Body = () => {
@@ -27,10 +28,9 @@ const Body = () => {
         setFilterCards(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
-    // Apply Shimmer here if listCards is empty. (Conditional Rendering)
-    // if (listCards.length == 0) {
-    //     return <Shimmer/>
-    // }
+    // Check internet Connectivity...
+    const internetStatus = useOnlineStatus();
+    if(!internetStatus) return <h1>Internet is not connected</h1>;
 
     // Search onClick() method...
     const searchButton = () => {
