@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 
 // Create Header Component
 const Header = () => {
-
-    console.log("Header componenet");
-
     // Creating a state variable using useState() hook.
     const [btnValue, setBtnValue] = useState("Login");
     const logValue = () => {
@@ -17,31 +14,27 @@ const Header = () => {
         }
     }
 
-    useEffect(() => {
-        console.log("useEffect");
-    }, []);
-
     return (
-        <div className="Header">
-            <img className="Logo" src={LOGO_URL} />
-            <div className="nav-items">
-                <ul>
-                    <li id="Leftli">
+        <div className="flex justify-between border border-solid border-orange-200 mb-5 mt-1 shadow-2xl">
+            <img className="w-40 h-20 ml-5 rounded-full" src={LOGO_URL} />
+            <div className="">
+                <ul className="flex p-4 mt-3">
+                    <li className="mr-9">
                          <Link to="/" className="link">Home</Link>
                     </li>
-                    <li>
+                    <li className="mr-9">
                         <Link to="/about" className="link">About</Link>
                     </li>
-                    <li>
+                    <li className="mr-9">
                         <Link to="/contact" className="link">Contact</Link>
                     </li>
-                    <li>
+                    <li className="mr-9">
                         <Link to="/grocery" className="link">Grocery</Link>
                     </li>
-                    <li>
+                    <li className="mr-9">
                         <Link className="link">Cart</Link>
                     </li>
-                    <button className="login-btn" onClick={logValue}>{btnValue}</button>
+                    <button className="mr-9" onClick={logValue}>{btnValue}</button>
                 </ul>
             </div>
         </div>
