@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // Create Header Component
 const Header = () => {
@@ -13,6 +14,9 @@ const Header = () => {
             setBtnValue("Login");
         }
     }
+
+    const cardItems = useSelector((state) => state.cart.items);
+    console.log(cardItems);
 
     return (
         <div className="flex justify-between border border-solid border-orange-200 mb-5 mt-1 shadow-2xl">
@@ -32,7 +36,7 @@ const Header = () => {
                         <Link to="/grocery" className="link">Grocery</Link>
                     </li>
                     <li className="mr-9">
-                        <Link className="link">Cart</Link>
+                        <Link to="/cart">Cart - {cardItems.length}</Link>
                     </li>
                     <button className="mr-9" onClick={logValue}>{btnValue}</button>
                 </ul>

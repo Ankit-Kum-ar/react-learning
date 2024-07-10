@@ -9,6 +9,10 @@ import { Error } from "./components/Error";
 import { RestaurentMenu } from "./components/RestaurentMenu";
 import { Shimmer } from "./components/Shimmer";
 import { UserContext } from "./utils/UserContext";
+import { Provider } from "react-redux";
+import { appStore } from "./utils/appStore";
+import { Footer } from "./components/Footer";
+import { Cart } from "./components/Cart";
 // import { Shimmer } from "./components/Shimmer";
 // import Grocery from "./components/Grocery";
 
@@ -27,13 +31,15 @@ const AppLayout = () => {
         setUserName(data.name);
     }, []);
     return (
-        <UserContext.Provider value={{loggedInUser : userName}}>
-            <div>
-                <Header/>
-                <Outlet/>
-                {/* <Footer/> */}
-            </div>
-        </UserContext.Provider>
+        <Provider store={appStore}>     
+            <UserContext.Provider value={{loggedInUser : userName}}>
+                <div>
+                    <Header/>
+                    <Outlet/>
+                    <Footer/>
+                </div>
+            </UserContext.Provider>
+        </Provider>
     )
 }   
 
@@ -61,6 +67,10 @@ const appRouter = createBrowserRouter([
             {
                 path : "/grocery",
                 element: <Suspense fallback={<Shimmer/>}><Grocery/></Suspense>
+            },
+            {
+                path : "/cart",
+                element: <Cart/>
             } 
         ],
         errorElement: <Error/>

@@ -53,12 +53,12 @@ const Body = () => {
             <div className="flex flex-wrap mb-5">
 
                 <div className=" ml-4">
-                    <input type="text" className="search-box" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
+                    <input type="text" className="text-black p-[2px]" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
                     <button className="ml-2 bg-gray-600  hover:bg-slate-800 pl-2 pr-2 rounded-lg" onClick={searchButton}>Search</button>
                 </div>
 
                 <button 
-                    className="ml-10 bg-gray-600  hover:bg-slate-800 pl-2 pr-2 rounded-md"
+                    className="ml-10 bg-gray-600 hover:bg-slate-800 pl-2 pr-2 rounded-md"
                     onClick={() => {
                         // filter logic
                         const cardListFiltered = listCards.filter((res) => res.info.avgRating >= 4.4);
